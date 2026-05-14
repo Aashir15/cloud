@@ -2,7 +2,7 @@ import Button from "./PrimaryBtn";
 
 export default function Hero() {
     return (
-        <section className="relative w-full md:min-h-screen py-22 flex items-center overflow-hidden">
+        <section className="relative w-full min-h-screen flex items-center overflow-hidden">
 
             {/* Background Video */}
             <video
@@ -30,7 +30,7 @@ export default function Hero() {
 
                     <div className="max-w-2xl text-white">
 
-                        <span className="badge">
+                        <span className="badge mb-4">
                             Global Software Solutions
                         </span>
 
@@ -41,13 +41,13 @@ export default function Hero() {
                             Software Company
                         </h1>
 
-                        <p className="mt-6 text max-w-xl">
+                        <p className="mt-4 text max-w-xl">
                             We create world-class websites, mobile apps,
                             UI/UX experiences, branding, and scalable
                             digital products for modern businesses.
                         </p>
 
-                        <div className="mt-8 flex flex-wrap gap-4">
+                        <div className="mt-4 flex flex-wrap gap-4">
                             <Button text="Get Started" />
                         </div>
 

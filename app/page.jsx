@@ -34,7 +34,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
 
           <div className="text-center max-w-3xl mx-auto">
-            <span className="badge">
+            <span className="badge mb-4">
               Valuable Partners
             </span>
 
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
 
           <div>
-            <p className="badge">
+            <p className="badge mb-4">
               Discover DotClick
             </p>
 
@@ -83,7 +83,7 @@ export default function Home() {
               <span className="text-primary"> Transform, and Lead</span>
             </h2>
 
-            <p className="text">
+            <p className="text mt-4">
               We’re more than just a global software solutions provider we’re
               your strategic partner in digital transformation. Our journey,
               fueled by innovation and industry leadership, aims to revolutionize
