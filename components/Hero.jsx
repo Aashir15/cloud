@@ -22,7 +22,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-black/50" />
 
             {/* Gradient */}
-            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" />
+            {/* <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" /> */}
 
             {/* Content */}
             <div className="relative z-10 w-full">
@@ -30,7 +30,7 @@ export default function Hero() {
 
                     <div className="max-w-2xl text-white">
 
-                        <span className="inline-block mb-5 text-sm tracking-[0.2em] uppercase text-gray-300 border border-white/20 rounded-full px-4 py-2 backdrop-blur-md">
+                        <span className="badge">
                             Global Software Solutions
                         </span>
 
