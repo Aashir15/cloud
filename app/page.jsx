@@ -1,4 +1,6 @@
+import FAQ from "../components/Faq";
 import Hero from "../components/Hero";
+import Portfolio from "../components/Portfolio";
 
 
 const partners = [
@@ -21,6 +23,39 @@ const partners = [
   {
     name: "OpenAI",
     image: "/assets/CloudMindsTeach-OpenAiPartners.png",
+  },
+];
+
+const ratings = [
+  {
+    name: "Trustpilot",
+    logo: "assets/Trustpilot.png",
+    rating: "4.8 Rating on Trustpilot",
+  },
+  {
+    name: "Google",
+    logo: "assets/google.png",
+    rating: "4.6 Rating on Google",
+  },
+  {
+    name: "Fiverr",
+    logo: "assets/fiver.png",
+    rating: "4.9 Rating on Fiverr",
+  },
+  {
+    name: "Bark",
+    logo: "assets/bark.png",
+    rating: "4.8 Rating on Bark",
+  },
+  {
+    name: "Upwork",
+    logo: "assets/Upwork.png",
+    rating: "4.9 Rating on Upwork",
+  },
+  {
+    name: "Toptal",
+    logo: "assets/Toptal.png",
+    rating: "4.6 Rating on Toptal",
   },
 ];
 
@@ -74,7 +109,7 @@ export default function Home() {
 
           <div>
             <p className="badge mb-4">
-              Discover DotClick
+              Discover Cloud Minds Tech
             </p>
 
             <h2 className="heading">
@@ -93,6 +128,104 @@ export default function Home() {
 
         </div>
       </section>
+
+      <section className="md:py-20 py-12">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+          <div>
+            <p className="badge mb-4">
+              Redefining Digital Aesthetics
+            </p>
+
+            <h2 className="heading mb-4">
+              Modern Design Meets Cutting 
+              <span className="text-primary"> Edge Technology</span>
+            </h2>
+            <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#8200db_0,#8200db_4px,transparent_4px,transparent_8px)]" />
+
+            <FAQ />
+          </div>
+
+            <div className="">
+              <img
+                src="/assets/h-1.webp"
+                alt="DotClick team working"
+                className="w-130 rounded-2xl h-auto object-cover"
+              />
+            </div>
+
+        </div>
+      </section>
+
+      <section className="md:py-20 py-12">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
+
+          <div>
+            <p className="badge mb-4">
+              Our Commitment To Excellence Verified
+            </p>
+
+            <h2 className="heading mb-4">
+              Industry Recognition <br />
+              and Customer
+              Satisfaction
+            </h2>
+
+            <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#8200db_0,#8200db_4px,transparent_4px,transparent_8px)]" />
+
+            <p className="text">
+              DotClick isn’t just about delivering exceptional tech
+              solutions; it’s about earning your trust and setting
+              industry benchmarks. Our numerous awards and
+              consistently high ratings on platforms like Trustpilot
+              and Google Reviews affirm our commitment to quality and
+              customer satisfaction.
+            </p>
+          </div>
+
+          <div>
+            <p className="text mb-6">
+              Recognized for industry-leading excellence through
+              prestigious awards, and further validated by outstanding
+              customer ratings on Trustpilot and Google Reviews.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10">
+
+              {ratings.map((item, index) => (
+                <div key={index} className="flex flex-col items-center text-center">
+
+                  {/* LOGO */}
+                  <img
+                    src={item.logo}
+                    alt={item.name}
+                    className="h-14 object-contain mb-4"
+                  />
+
+                  {/* STARS */}
+                  <div className="flex gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <span
+                        key={i}
+                        className="text-yellow-400 text-lg"
+                      >
+                        ★
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* RATING */}
+                  <p className="text-sm">
+                    {item.rating}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Portfolio />
 
     </>
   );

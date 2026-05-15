@@ -3,7 +3,7 @@
 :root {
   /* COLORS */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #07050d;
 
   --primary-color: #8200db;
   --secondary-color: #d595ff;
@@ -32,7 +32,7 @@
 /* DARK MODE */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #07050d;
     --foreground: #ededed;
   }
 }
