@@ -18,12 +18,13 @@ export default function Hero() {
                 />
             </video>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/50" />
+            <img
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-170 object-contain pointer-events-none mix-blend-color"
+                src="assets/z.png"
+                alt=""
+            />
 
-            {/* Gradient */}
-            {/* <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" /> */}
-
+   
             {/* Content */}
             <div className="relative z-10 w-full">
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -55,10 +56,6 @@ export default function Hero() {
 
                 </div>
             </div>
-
-            {/* Bottom Fade */}
-            <div className="absolute bottom-0 left-0 w-full h-34 bg-linear-to-t from-black to-transparent" />
-
         </section>
     );
 }
