@@ -7,7 +7,7 @@ export default function Services() {
 
             <section className="relative w-full md:min-h-150 min-h-100">
                 <Image
-                    src="/assets/portfolio.png"
+                    src="/assets/service.png"
                     alt="Portfolio Banner"
                     fill
                     priority

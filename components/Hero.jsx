@@ -19,7 +19,7 @@ export default function Hero() {
             </video>
 
             <img
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-170 object-contain pointer-events-none mix-blend-color"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-170 object-contain pointer-events-none opacity-100 mix-blend-color"
                 src="assets/z.png"
                 alt=""
             />
