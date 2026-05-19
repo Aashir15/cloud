@@ -42,7 +42,7 @@ export default function Hero() {
                             Software Company
                         </h1>
 
-                        <p className="mt-4 text max-w-xl">
+                        <p className="mt-4  max-w-xl">
                             We create world-class websites, mobile apps,
                             UI/UX experiences, branding, and scalable
                             digital products for modern businesses.

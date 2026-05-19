@@ -19,11 +19,11 @@ export default function Services() {
                 <div className="absolute inset-0 z-10 flex items-end">
                     <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pb-16 lg:pb-24">
 
-                        <p className="heading">
+                        <p className="heading text-white">
                             Services
                         </p>
 
-                        <p className="text">
+                        <p className="text text-gray-200! max-w-2xl mt-4">
                             Share your stories and news with everyone.
                         </p>
 

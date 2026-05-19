@@ -35,7 +35,7 @@ export default function FAQSection() {
 
     return (
         <section className="mt-6">
-            <div className="text-white space-y-4">
+            <div className="space-y-4">
                 {faqs.map((faq, index) => {
                     const isOpen = openIndex === index;
 

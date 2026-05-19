@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={raleway.variable}>
+    <html lang="en" className={raleway.variable} data-scroll-behavior="smooth">
       <body className="min-h-full flex flex-col font-sans">
         <Header />
         {children}

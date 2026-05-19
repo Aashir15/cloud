@@ -53,7 +53,7 @@ export default function Portfolio() {
                                     {project.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-md line-clamp-2">
+                                <p className="text-md line-clamp-2">
                                     {project.description}
                                 </p>
                             </div>
