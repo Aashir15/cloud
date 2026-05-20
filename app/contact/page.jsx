@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import Button from "../../components/PrimaryBtn"
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Contact() {
     const [form, setForm] = useState({
@@ -38,128 +40,55 @@ export default function Contact() {
                 <div className="absolute inset-0 z-10 flex items-end">
                     <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pb-16 lg:pb-24">
                         <p className="heading text-white">Contact</p>
-                        <p className="text-gray-200 max-w-2xl mt-4">
+                        <p className="text text-gray-200! max-w-2xl mt-4">
                             Let’s talk about your next project.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section className="">
+            <section className="max-w-6xl mx-auto md:py-20 py-12">
 
-                <div className="max-w-6xl mx-auto">
+                <div className="px-6">
 
-                    {/* TOP */}
-                    <div className="grid lg:grid-cols-3 gap-12 border-b border-white/10 pb-14 mb-14">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <p className="badge mb-5 inline-block">
+                            Booking Inquiry
+                        </p>
 
-                        <div>
-                            <p className="text-sm uppercase tracking-[4px] text-gray-500 mb-5">
-                                Booking Inquiry
-                            </p>
-
-                            <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
-                                Let’s Build Something Great Together
-                            </h2>
-                        </div>
-
-                        <div>
-                            <p className="text-sm uppercase tracking-[4px] text-gray-500 mb-5">
-                                Contact
-                            </p>
-
-                            <div className="space-y-4 text-gray-300 text-sm">
-                                <div className="flex items-center gap-3">
-                                    <Phone size={16} />
-                                    <span>+92 300 1234567</span>
-                                </div>
-
-                                <div className="flex items-center gap-3">
-                                    <Mail size={16} />
-                                    <span>cfonte7@icloud.com</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p className="text-sm uppercase tracking-[4px] text-gray-500 mb-5">
-                                Availability
-                            </p>
-
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                                Currently accepting freelance projects, startup collaborations,
-                                and premium website bookings worldwide.
-                            </p>
-                        </div>
-
+                        <h2 className="heading">
+                            Let’s Build Something Great Together
+                        </h2>
                     </div>
 
-                    {/* FORM */}
-                    <div className="max-w-4xl">
+                    <div className="max-w-4xl mx-auto mt-12">
+                        <form className="space-y-6">
 
-                        <form className="space-y-8">
-
-                            {/* ROW */}
                             <div className="grid md:grid-cols-2 gap-6">
+                                <FloatingInput
+                                    label="Name"
+                                    name="name"
+                                />
 
-                                <div>
-                                    <label className="block text-sm text-gray-400 mb-3">
-                                        Name
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        placeholder="Your full name"
-                                        className="w-full h-14 bg-transparent border border-white/10 px-5 outline-none focus:border-white transition-all"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm text-gray-400 mb-3">
-                                        Email
-                                    </label>
-
-                                    <input
-                                        type="email"
-                                        placeholder="Your email address"
-                                        className="w-full h-14 bg-transparent border border-white/10 px-5 outline-none focus:border-white transition-all"
-                                    />
-                                </div>
-
-                            </div>
-
-                            {/* WEBSITE */}
-                            <div>
-                                <label className="block text-sm text-gray-400 mb-3">
-                                    Website
-                                </label>
-
-                                <input
-                                    type="text"
-                                    placeholder="https://yourwebsite.com"
-                                    className="w-full h-14 bg-transparent border border-white/10 px-5 outline-none focus:border-white transition-all"
+                                <FloatingInput
+                                    label="Email"
+                                    type="email"
+                                    name="email"
                                 />
                             </div>
 
-                            {/* MESSAGE */}
-                            <div>
-                                <label className="block text-sm text-gray-400 mb-3">
-                                    Message
-                                </label>
+                            <FloatingInput
+                                label="Website"
+                                name="website"
+                            />
 
-                                <textarea
-                                    rows="7"
-                                    placeholder="Tell me about your project..."
-                                    className="w-full bg-transparent border border-white/10 px-5 py-4 outline-none resize-none focus:border-white transition-all"
-                                />
-                            </div>
-
-                            {/* BUTTON */}
-                            <button
-                                type="submit"
-                                className="group relative overflow-hidden border border-white bg-white text-black h-14 px-12 uppercase tracking-[3px] text-sm hover:bg-transparent hover:text-white transition-all duration-300"
-                            >
-                                Submit Inquiry
-                            </button>
+                            <FloatingInput
+                                label="Message"
+                                name="message"
+                                textarea
+                                rows={7}
+                            />
+                            <Button type="submit" text="Submit Inquiry" />
 
                         </form>
                     </div>
@@ -167,5 +96,84 @@ export default function Contact() {
                 </div>
             </section>
         </>
+    );
+}
+
+
+
+// components/ui/InputField.jsx
+
+function FloatingInput({
+    label,
+    type = "text",
+    value,
+    onChange,
+    name,
+    textarea = false,
+    rows = 6,
+    ...rest
+}) {
+    const [show, setShow] = useState(false);
+
+    const isPassword = type === "password";
+
+    const inputStyles = `
+        w-full rounded-2xl
+        border border-black/10 dark:border-white/10
+        
+        bg-black/[0.03] dark:bg-white/[0.03]
+
+        text-black dark:text-white
+        placeholder:text-black/40 dark:placeholder:text-white/40
+
+        outline-none
+        transition-all duration-300
+
+        focus:border-purple-400
+        focus:bg-black/[0.05] dark:focus:bg-white/[0.05]
+    `;
+
+    return (
+        <div className="relative">
+
+            {textarea ? (
+                <textarea
+                    rows={rows}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={label}
+                    {...rest}
+                    className={`${inputStyles} px-5 py-4 resize-none`}
+                />
+            ) : (
+                <input
+                    type={isPassword ? (show ? "text" : "password") : type}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={label}
+                    {...rest}
+                    className={`${inputStyles} h-14 px-5`}
+                />
+            )}
+
+            {/* PASSWORD TOGGLE */}
+            {isPassword && (
+                <button
+                    type="button"
+                    onClick={() => setShow(!show)}
+                    className="
+                        absolute right-4 top-1/2 -translate-y-1/2
+                        text-black/40 dark:text-white/40
+                        hover:text-black dark:hover:text-white
+                        transition-colors
+                    "
+                >
+                    {show ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+            )}
+
+        </div>
     );
 }

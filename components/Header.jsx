@@ -16,9 +16,9 @@ import Button from "./PrimaryBtn";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-    
-    
-    
+
+
+
     const [scrolled, setScrolled] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
 
@@ -70,17 +70,18 @@ export default function Header() {
         { name: "Home", href: "/" },
         { name: "Portfolio", href: "/portfolio" },
         { name: "About", href: "/about" },
-        { name: "Contact", href: "#" },
+        { name: "Contact", href: "/contact" },
     ];
 
     return (
         <>
             <header
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isSolidHeader
-                        ? "bg-white/80 dark:bg-black/70 backdrop-blur-xl  py-3"
-                        : "bg-transparent py-5"
+                    ? "bg-white/80 dark:bg-black/70 backdrop-blur-xl  py-3"
+                    : "bg-transparent py-5"
                     }`}
             >
+                {console.log(isSolidHeader)}
                 <div className="max-w-7xl mx-auto px-4 lg:px-8">
                     <div className="flex items-center justify-between">
 
@@ -88,8 +89,8 @@ export default function Header() {
                         <Link
                             href="/"
                             className={`text-2xl font-bold tracking-tight transition ${isSolidHeader
-                                    ? "text-black dark:text-white"
-                                    : "text-white"
+                                ? "text-black dark:text-white"
+                                : "text-white"
                                 }`}
                         >
                             Cloud.
@@ -103,8 +104,8 @@ export default function Header() {
                                     key={link.name}
                                     href={link.href}
                                     className={`text-sm font-medium transition hover:text-blue-500 ${isSolidHeader
-                                            ? "text-black dark:text-white"
-                                            : "text-white"
+                                        ? "text-black dark:text-white"
+                                        : "text-white"
                                         }`}
                                 >
                                     {link.name}
@@ -123,8 +124,8 @@ export default function Header() {
                                     href="/services"
                                     onClick={() => setServicesOpen(false)}
                                     className={`flex items-center gap-1 text-sm font-medium transition hover:text-blue-500 ${isSolidHeader
-                                            ? "text-black dark:text-white"
-                                            : "text-white"
+                                        ? "text-black dark:text-white"
+                                        : "text-white"
                                         }`}
                                 >
                                     Services
@@ -196,7 +197,7 @@ export default function Header() {
                             {/* DARK MODE */}
                             <button
                                 onClick={toggleTheme}
-                                className={`w-11 h-11 rounded-full border flex items-center justify-center transition ${scrolled
+                                className={`w-11 h-11 rounded-full border flex items-center justify-center transition ${isSolidHeader
                                     ? "border-black/10 dark:border-white/10 text-black dark:text-white"
                                     : "border-white/20 text-white"
                                     }`}
