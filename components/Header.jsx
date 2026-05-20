@@ -81,7 +81,6 @@ export default function Header() {
                     : "bg-transparent py-5"
                     }`}
             >
-                {console.log(isSolidHeader)}
                 <div className="max-w-7xl mx-auto px-4 lg:px-8">
                     <div className="flex items-center justify-between">
 
@@ -134,7 +133,7 @@ export default function Header() {
 
                                 {/* MEGA MENU */}
                                 <div
-                                    className={`absolute left-1/2 top-full mt-6 -translate-x-1/2 w-[850px] rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-950 shadow-2xl overflow-hidden transition-all duration-300 ${servicesOpen
+                                    className={`absolute left-1/2 top-full mt-6 -translate-x-1/2 w-212 rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-950 shadow-2xl overflow-hidden transition-all duration-300 ${servicesOpen
                                         ? "opacity-100 visible translate-y-0"
                                         : "opacity-0 invisible translate-y-4"
                                         }`}

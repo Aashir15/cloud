@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FAQ from "../components/Faq";
 import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
@@ -24,37 +25,41 @@ const partners = [
     name: "OpenAI",
     image: "/assets/CloudMindsTeach-OpenAiPartners.png",
   },
+  {
+    name: "Toptal",
+    image: "/assets/toptal.png",
+  },
 ];
 
 const ratings = [
   {
     name: "Trustpilot",
-    logo: "assets/Trustpilot.png",
+    logo: "/assets/Trustpilot.png",
     rating: "4.8 Rating on Trustpilot",
   },
   {
     name: "Google",
-    logo: "assets/google.png",
+    logo: "/assets/google.png",
     rating: "4.6 Rating on Google",
   },
   {
     name: "Fiverr",
-    logo: "assets/fiver.png",
+    logo: "/assets/fiver.png",
     rating: "4.9 Rating on Fiverr",
   },
   {
     name: "Bark",
-    logo: "assets/bark.png",
+    logo: "/assets/bark.png",
     rating: "4.8 Rating on Bark",
   },
   {
     name: "Upwork",
-    logo: "assets/Upwork.png",
+    logo: "/assets/Upwork.png",
     rating: "4.9 Rating on Upwork",
   },
   {
     name: "Toptal",
-    logo: "assets/Toptal.png",
+    logo: "/assets/Toptal.png",
     rating: "4.6 Rating on Toptal",
   },
 ];
@@ -79,15 +84,17 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {partners.map((partner, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center">
-                <img
+                <Image
                   src={partner.image}
                   alt={partner.name}
-                  className="grayscale hover:grayscale-0 transition-all duration-500"
+                  width={220}
+                  height={110}
+                  className="grayscale hover:grayscale-0 transition-all duration-500 object-contain"
                 />
               </div>
             ))}
@@ -196,10 +203,12 @@ export default function Home() {
                 <div key={index} className="flex flex-col items-center text-center">
 
                   {/* LOGO */}
-                  <img
+                  <Image
                     src={item.logo}
                     alt={item.name}
-                    className="h-14 object-contain mb-4"
+                    width={120}
+                    height={60}
+                    className="h-14 w-auto "
                   />
 
                   {/* STARS */}
