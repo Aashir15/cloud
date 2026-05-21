@@ -2,7 +2,7 @@
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { services } from "../../../data/projects";
+import { services } from "../../../data/creative&design";
 import FAQSection from "../../../components/Faq";
 
 export async function generateMetadata({ params }) {

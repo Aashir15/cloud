@@ -12,7 +12,7 @@ export default function Button({
     const baseClass = `
         inline-flex items-center justify-center gap-2
         px-6 py-3 rounded-full
-        bg-primary hover:bg-secondary text-white
+        bg-primary text-black
         font-medium
         transition-all duration-300
         cursor-pointer

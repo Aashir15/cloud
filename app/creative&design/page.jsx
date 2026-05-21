@@ -1,13 +1,13 @@
 import Image from "next/image";
 import ServicesBox from "../../components/ServicesBox";
 
-export default function Services() {
+export default function () {
     return (
         <>
 
             <section className="relative w-full md:min-h-150 min-h-100">
                 <Image
-                    src="/assets/service.png"
+                    src="/assets/service-2.webp"
                     alt="Portfolio Banner"
                     fill
                     priority
@@ -20,7 +20,7 @@ export default function Services() {
                     <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pb-16 lg:pb-24">
 
                         <p className="heading text-white">
-                            Services
+                            Creative & Design Wing
                         </p>
 
                         <p className="text text-gray-200! max-w-2xl mt-4">

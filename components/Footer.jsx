@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
     const links = [
@@ -19,8 +20,18 @@ export default function Footer() {
 
                     {/* BRAND */}
                     <div>
-                        <Link href="/" className="text-2xl font-bold tracking-tight">
-                            Cloud.
+                        <Link
+                            href="/"
+                            className="flex items-center shrink-0"
+                        >
+                            <Image
+                                src="/assets/cloud-mind-tech.png"
+                                alt="Cloud Minds Tech"
+                                width={180}
+                                height={40}
+                                priority
+                                className="h-10 w-auto object-contain"
+                            />
                         </Link>
 
                         <p className="mt-5 max-w-md text-sm leading-7 text-gray-600 dark:text-gray-400">

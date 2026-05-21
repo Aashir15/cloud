@@ -2,22 +2,17 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import {
-    Menu,
-    X,
-    ChevronDown,
-    Moon,
-    Sun,
-    Layers3,
-} from "lucide-react";
-
-import { services } from "../data/projects";
-import Button from "./PrimaryBtn";
+import { Menu, X, ChevronDown, Moon, Sun, Layers3 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
+import { services } from "../data/creative&design";
+import { techDev } from "../data/techDev";
+import { growthMarket } from "../data/growthMarket";
+import { studio } from "../data/studio";
+import Button from "./PrimaryBtn";
+import Image from "next/image";
+
 export default function Header() {
-
-
 
     const [scrolled, setScrolled] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
@@ -31,8 +26,8 @@ export default function Header() {
     const isSolidHeader = scrolled || isPortfolioSlug;
 
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [servicesOpen, setServicesOpen] = useState(false);
-    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    const [activeMegaMenu, setActiveMegaMenu] = useState(null);
+    const [mobileOpenMenu, setMobileOpenMenu] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -70,9 +65,32 @@ export default function Header() {
         { name: "Home", href: "/" },
         { name: "Portfolio", href: "/portfolio" },
         { name: "About", href: "/about" },
-        { name: "Contact", href: "/contact" },
+        // { name: "Contact", href: "/contact" },
     ];
 
+    const megaMenus = [
+        {
+            title: "Creative & Design Wing",
+            href: "/creative&design",
+            data: services,
+        },
+        {
+            title: "Tech & Development",
+            href: "/tech-&-development",
+            data: techDev,
+        },
+        {
+            title: "Growth & Marketing Wing",
+            href: "/growth-&-marketing",
+            data: growthMarket,
+        },
+        {
+            title: "3D Studio",
+            href: "/3d-studio",
+            data: studio,
+        },
+    ];
+    
     return (
         <>
             <header
@@ -87,22 +105,26 @@ export default function Header() {
                         {/* LOGO */}
                         <Link
                             href="/"
-                            className={`text-2xl font-bold tracking-tight transition ${isSolidHeader
-                                ? "text-black dark:text-white"
-                                : "text-white"
-                                }`}
+                            className="flex items-center shrink-0"
                         >
-                            Cloud.
+                            <Image
+                                src="/assets/cloud-mind-tech.png"
+                                alt="Cloud Minds Tech"
+                                width={180}
+                                height={40}
+                                priority
+                                className="h-10 w-auto object-contain"
+                            />
                         </Link>
 
                         {/* DESKTOP NAV */}
-                        <nav className="hidden lg:flex items-center gap-8">
+                        <nav className="hidden lg:flex items-center gap-4">
 
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`text-sm font-medium transition hover:text-blue-500 ${isSolidHeader
+                                    className={`text-sm font-medium transition hover:text-primary ${isSolidHeader
                                         ? "text-black dark:text-white"
                                         : "text-white"
                                         }`}
@@ -112,86 +134,88 @@ export default function Header() {
                             ))}
 
                             {/* SERVICES MEGA MENU */}
-                            <div
-                                className="relative"
-                                onMouseEnter={() => setServicesOpen(true)}
-                                onMouseLeave={() => setServicesOpen(false)}
-                            >
-
-                                {/* CLICKABLE SERVICES */}
-                                <Link
-                                    href="/services"
-                                    onClick={() => setServicesOpen(false)}
-                                    className={`flex items-center gap-1 text-sm font-medium transition hover:text-blue-500 ${isSolidHeader
-                                        ? "text-black dark:text-white"
-                                        : "text-white"
-                                        }`}
-                                >
-                                    Services
-                                    <ChevronDown size={16} />
-                                </Link>
-
-                                {/* MEGA MENU */}
+                            {megaMenus.map((menu) => (
                                 <div
-                                    className={`absolute left-1/2 top-full mt-6 -translate-x-1/2 w-212 rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-950 shadow-2xl overflow-hidden transition-all duration-300 ${servicesOpen
-                                        ? "opacity-100 visible translate-y-0"
-                                        : "opacity-0 invisible translate-y-4"
-                                        }`}
+                                    key={menu.title}
+                                    className="relative"
+                                    onMouseEnter={() => setActiveMegaMenu(menu.title)}
+                                    onMouseLeave={() => setActiveMegaMenu(null)}
+                                    onClick={() => setActiveMegaMenu(null)}
                                 >
-                                    <div className="grid grid-cols-2 gap-2 p-6">
 
-                                        {services.map((service) => (
-                                            <Link
-                                                key={service.slug}
-                                                href={`/services/${service.slug}`}
-                                                onClick={() => setServicesOpen(false)}
-                                                className="group rounded-2xl p-4 hover:bg-gray-100 dark:hover:bg-white/5 transition"
-                                            >
-                                                <div className="flex gap-4">
+                                    {/* TITLE */}
+                                    <Link
+                                        href={menu.href}
+                                        className={`flex items-center gap-1 text-sm font-medium transition hover:text-primary ${isSolidHeader
+                                                ? "text-black dark:text-white"
+                                                : "text-white"
+                                            }`}
+                                    >
+                                        {menu.title}
+                                        <ChevronDown size={16} />
+                                    </Link>
 
-                                                    <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-white/10 flex items-center justify-center shrink-0">
-                                                        <Layers3
-                                                            size={22}
-                                                            className="text-blue-600"
-                                                        />
+                                    {/* MEGA MENU */}
+                                    <div
+                                        className={`absolute left-1/2 top-full mt-6 -translate-x-1/2 w-212 rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-950 shadow-2xl overflow-hidden transition-all duration-300 ${activeMegaMenu === menu.title
+                                                ? "opacity-100 visible translate-y-0"
+                                                : "opacity-0 invisible translate-y-4"
+                                            }`}
+                                    >
+                                        <div className="grid grid-cols-2 gap-2 p-6">
+
+                                            {menu.data.map((service) => (
+                                                <Link
+                                                    key={service.slug}
+                                                    href={`${menu.href}/${service.slug}`}
+                                                    onClick={() => setActiveMegaMenu(null)}
+                                                    className="group rounded-2xl p-4 hover:bg-gray-100 dark:hover:bg-white/5 transition"
+                                                >
+                                                    <div className="flex gap-4">
+
+                                                        <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-white/10 flex items-center justify-center shrink-0">
+                                                            <Layers3
+                                                                size={22}
+                                                                className="text-primary"
+                                                            />
+                                                        </div>
+
+                                                        <div>
+                                                            <h4 className="font-semibold text-black dark:text-white group-hover:text-primary transition">
+                                                                {service.hero.title}
+                                                            </h4>
+
+                                                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
+                                                                {service.hero.description}
+                                                            </p>
+                                                        </div>
                                                     </div>
-
-                                                    <div>
-                                                        <h4 className="font-semibold text-black dark:text-white group-hover:text-blue-600 transition">
-                                                            {service.hero.title}
-                                                        </h4>
-
-                                                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
-                                                            {service.hero.description}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                    </div>
-
-                                    {/* FOOTER */}
-                                    <div className="bg-gray-50 dark:bg-white/5 px-6 py-5 flex items-center justify-between">
-                                        <div>
-                                            <p className="font-semibold text-black dark:text-white">
-                                                Need custom solutions?
-                                            </p>
-
-                                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                                                Let’s build something amazing together.
-                                            </p>
+                                                </Link>
+                                            ))}
                                         </div>
 
-                                        <Link
-                                            href="/contact"
-                                            onClick={() => setServicesOpen(false)}
-                                            className="px-5 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium"
-                                        >
-                                            Contact Us
-                                        </Link>
+                                        {/* FOOTER */}
+                                        <div className="bg-gray-50 dark:bg-white/5 px-6 py-5 flex items-center justify-between">
+                                            <div>
+                                                <p className="font-semibold text-black dark:text-white">
+                                                    Need custom solutions?
+                                                </p>
+
+                                                <p className="text-sm text-gray-500 dark:text-gray-400">
+                                                    Let’s build something amazing together.
+                                                </p>
+                                            </div>
+
+                                            <Link
+                                                href="/contact"
+                                                className="px-5 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium"
+                                            >
+                                                Contact Us
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
 
                             {/* DARK MODE */}
                             <button
@@ -208,7 +232,7 @@ export default function Header() {
                                 )}
                             </button>
 
-                            <Button text="Get Started" />
+                            <Button to="/contact" text="Get Quote" />
                         </nav>
 
                         {/* MOBILE BUTTON */}
@@ -263,10 +287,17 @@ export default function Header() {
                     <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-white/10">
                         <Link
                             href="/"
-                            className="text-2xl font-bold text-black dark:text-white"
+                            className="flex items-center shrink-0"
                             onClick={() => setMobileOpen(false)}
                         >
-                            Cloud.
+                            <Image
+                                src="/assets/cloud-mind-tech.png"
+                                alt="Cloud Minds Tech"
+                                width={180}
+                                height={40}
+                                priority
+                                className="h-10 w-auto object-contain"
+                            />
                         </Link>
 
                         <button
@@ -291,68 +322,77 @@ export default function Header() {
                             </Link>
                         ))}
 
-                        {/* MOBILE SERVICES */}
-                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden">
-
-                            {/* CLICKABLE */}
-                            <div className="flex items-center justify-between px-4 py-4">
-
-                                <Link
-                                    href="/services"
-                                    onClick={() => setMobileOpen(false)}
-                                    className="font-medium text-black dark:text-white"
-                                >
-                                    Services
-                                </Link>
-
-                                <button
-                                    onClick={() =>
-                                        setMobileServicesOpen(!mobileServicesOpen)
-                                    }
-                                    className="text-black dark:text-white"
-                                >
-                                    <ChevronDown
-                                        size={20}
-                                        className={`transition ${mobileServicesOpen
-                                            ? "rotate-180"
-                                            : ""
-                                            }`}
-                                    />
-                                </button>
-                            </div>
-
-                            {/* DROPDOWN */}
+                        {/* MOBILE MEGA MENUS */}
+                        {megaMenus.map((menu) => (
                             <div
-                                className={`transition-all duration-300 overflow-hidden ${mobileServicesOpen
-                                    ? "max-h-[700px]"
-                                    : "max-h-0"
-                                    }`}
+                                key={menu.title}
+                                className="rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden"
                             >
-                                <div className="px-3 pb-3 space-y-2">
 
-                                    {services.map((service) => (
-                                        <Link
-                                            key={service.slug}
-                                            href={`/services/${service.slug}`}
-                                            onClick={() => setMobileOpen(false)}
-                                            className="block rounded-xl p-3 hover:bg-gray-100 dark:hover:bg-white/5 transition"
-                                        >
-                                            <h4 className="text-sm font-semibold text-black dark:text-white">
-                                                {service.hero.title}
-                                            </h4>
+                                {/* TOP */}
+                                <div className="flex items-center justify-between px-4 py-4">
 
-                                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
-                                                {service.hero.description}
-                                            </p>
-                                        </Link>
-                                    ))}
+                                    <Link
+                                        href={menu.href}
+                                        onClick={() => setMobileOpen(false)}
+                                        className="font-medium text-black dark:text-white"
+                                    >
+                                        {menu.title}
+                                    </Link>
+
+                                    <button
+                                        onClick={() =>
+                                            setMobileOpenMenu(
+                                                mobileOpenMenu === menu.title
+                                                    ? null
+                                                    : menu.title
+                                            )
+                                        }
+                                        className="text-black dark:text-white"
+                                    >
+                                        <ChevronDown
+                                            size={20}
+                                            className={`transition ${mobileOpenMenu === menu.title
+                                                    ? "rotate-180"
+                                                    : ""
+                                                }`}
+                                        />
+                                    </button>
+                                </div>
+
+                                {/* DROPDOWN */}
+                                <div
+                                    className={`transition-all duration-300 overflow-hidden ${mobileOpenMenu === menu.title
+                                            ? "max-h-[1000px]"
+                                            : "max-h-0"
+                                        }`}
+                                >
+                                    <div className="px-3 pb-3 space-y-2">
+
+                                        {menu.data.map((service) => (
+                                            <Link
+                                                key={service.slug}
+                                                href={`${menu.href}/${service.slug}`}
+                                                onClick={() => setMobileOpen(false)}
+                                                className="block rounded-xl p-3 hover:bg-gray-100 dark:hover:bg-white/5 transition"
+                                            >
+                                                <h4 className="text-sm font-semibold text-black dark:text-white">
+                                                    {service.hero.title}
+                                                </h4>
+
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">
+                                                    {service.hero.description}
+                                                </p>
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
 
                         {/* CTA */}
                         <div className="pt-5">
-                            <Button text="Contact Us" />
+                            <Button to="/contact" text="Contact Us" />
                         </div>
                     </div>
                 </div>

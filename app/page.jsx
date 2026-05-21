@@ -25,10 +25,6 @@ const partners = [
     name: "OpenAI",
     image: "/assets/CloudMindsTeach-OpenAiPartners.png",
   },
-  {
-    name: "Toptal",
-    image: "/assets/toptal.png",
-  },
 ];
 
 const ratings = [
@@ -84,7 +80,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
               <div
                 key={index}
@@ -148,7 +144,7 @@ export default function Home() {
               Modern Design Meets Cutting 
               <span className="text-primary"> Edge Technology</span>
             </h2>
-            <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#8200db_0,#8200db_4px,transparent_4px,transparent_8px)]" />
+            <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
             <FAQ />
           </div>
@@ -178,7 +174,7 @@ export default function Home() {
               Satisfaction
             </h2>
 
-            <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#8200db_0,#8200db_4px,transparent_4px,transparent_8px)]" />
+            <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
             <p className="text">
               DotClick isn’t just about delivering exceptional tech
@@ -206,8 +202,8 @@ export default function Home() {
                   <Image
                     src={item.logo}
                     alt={item.name}
-                    width={120}
-                    height={60}
+                    width={160}
+                    height={100}
                     className="h-14 w-auto "
                   />
 

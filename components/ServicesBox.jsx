@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { services } from "../data/projects";
+import { services } from "../data/creative&design";
 
 export default function Services() {
     return (
@@ -12,7 +12,7 @@ export default function Services() {
 
                         <Link
                             key={service.slug}
-                            href={`/services/${service.slug}`}
+                            href={`/creative&design/${service.slug}`}
                             className="group"
                         >
 
