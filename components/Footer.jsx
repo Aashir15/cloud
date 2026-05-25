@@ -11,7 +11,7 @@ export default function Footer() {
         { name: "About", path: "/about" },
         { name: "Contact", path: "/contact" },
     ];
-    
+
 
     return (
         <footer className="border-t border-black/10 dark:border-white/10 transition-colors duration-300">
@@ -27,10 +27,10 @@ export default function Footer() {
                             <Image
                                 src="/assets/cloud-mind-tech.png"
                                 alt="Cloud Minds Tech"
-                                width={180}
-                                height={40}
+                                width={500}
+                                height={200}
+                                className="w-25 h-auto"
                                 priority
-                                className="h-10 w-auto object-contain"
                             />
                         </Link>
 

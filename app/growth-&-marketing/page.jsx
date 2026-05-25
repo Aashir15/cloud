@@ -49,10 +49,11 @@ export default function () {
 
                                 {/* IMAGE */}
                                 <div className="relative overflow-hidden rounded-xl mb-4 bg-white/5">
-
-                                    <img
+                                    <Image
                                         src={service.hero.image}
                                         alt={service.hero.title}
+                                        width={1200}
+                                        height={800}
                                         className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
 

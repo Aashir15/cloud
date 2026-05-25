@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FAQSection from "../../components/Faq";
+import { services } from "../../data/creative&design";
 
 export const metadata = {
     title: "Cloud Minds Tech | About Us",
@@ -55,12 +56,12 @@ const ratings = [
     },
     {
         name: "Upwork",
-        logo: "/assets/Upwork.png",
+        logo: "/assets/upwork.png",
         rating: "4.9 Rating on Upwork",
     },
     {
         name: "Toptal",
-        logo: "/assets/Toptal.png",
+        logo: "/assets/toptal.png",
         rating: "4.6 Rating on Toptal",
     },
 ];
@@ -111,16 +112,18 @@ export default function page() {
                             Modern Design Meets Cutting
                             <span className="text-primary"> Edge Technology</span>
                         </h2>
-                        <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#8200db_0,#8200db_4px,transparent_4px,transparent_8px)]" />
+                        <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
-                        <FAQSection />
+                        <FAQSection faqs={services[0]?.faq || []} />
                     </div>
 
                     <div className="">
-                        <img
+                        <Image
                             src="/assets/h-1.webp"
                             alt="DotClick team working"
-                            className="w-130 rounded-2xl h-auto object-cover"
+                            width={1200}
+                            height={1200}
+                            className="w-full max-w-130 h-auto rounded-2xl object-cover"
                         />
                     </div>
 
@@ -141,7 +144,7 @@ export default function page() {
                             Satisfaction
                         </h2>
 
-                        <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#8200db_0,#8200db_4px,transparent_4px,transparent_8px)]" />
+                        <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
                         <p className="text">
                             DotClick isn’t just about delivering exceptional tech
@@ -163,15 +166,17 @@ export default function page() {
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10">
 
                             {ratings.map((item, index) => (
-                                <div key={index} className="flex flex-col items-center text-center">
-
+                                <div
+                                    key={index}
+                                    className="flex flex-col items-center text-center"
+                                >
                                     {/* LOGO */}
                                     <Image
                                         src={item.logo}
                                         alt={item.name}
-                                        width={120}
-                                        height={60}
-                                        className="h-14 w-auto "
+                                        width={400}
+                                        height={250}
+                                        className="w-40 h-auto object-contain"
                                     />
 
                                     {/* STARS */}

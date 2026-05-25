@@ -1,7 +1,8 @@
 import Image from "next/image";
-import FAQ from "../components/Faq";
 import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
+import FAQSection from "../components/Faq";
+import { services } from "../data/creative&design";
 
 
 const partners = [
@@ -50,12 +51,12 @@ const ratings = [
   },
   {
     name: "Upwork",
-    logo: "/assets/Upwork.png",
+    logo: "/assets/upwork.png",
     rating: "4.9 Rating on Upwork",
   },
   {
     name: "Toptal",
-    logo: "/assets/Toptal.png",
+    logo: "/assets/toptal.png",
     rating: "4.6 Rating on Toptal",
   },
 ];
@@ -84,13 +85,14 @@ export default function Home() {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center">
+                className="flex items-center justify-center"
+              >
                 <Image
                   src={partner.image}
                   alt={partner.name}
-                  width={220}
-                  height={110}
-                  className="grayscale hover:grayscale-0 transition-all duration-500 object-contain"
+                  width={500}
+                  height={250}
+                  className="w-55 h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
             ))}
@@ -102,13 +104,13 @@ export default function Home() {
       <section className="md:py-20 py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-            <div className="">
-              <img
-                src="/assets/h-1.webp"
-                alt="DotClick team working"
-                className="w-130 rounded-2xl h-auto object-cover"
-              />
-            </div>
+            <Image
+              src="/assets/h-1.webp"
+              alt="DotClick team working"
+              width={1200}
+              height={1200}
+              className="w-full max-w-130 h-auto rounded-2xl object-cover"
+            />
 
           <div>
             <p className="badge mb-4">
@@ -146,15 +148,17 @@ export default function Home() {
             </h2>
             <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
-            <FAQ />
+            <FAQSection faqs={services[0]?.faq || []} />
           </div>
 
             <div className="">
-              <img
-                src="/assets/h-1.webp"
-                alt="DotClick team working"
-                className="w-130 rounded-2xl h-auto object-cover"
-              />
+            <Image
+              src="/assets/h-1.webp"
+              alt="DotClick team working"
+              width={1200}
+              height={1200}
+              className="w-full max-w-130 h-auto rounded-2xl object-cover"
+            />
             </div>
 
         </div>
@@ -196,15 +200,17 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10">
 
               {ratings.map((item, index) => (
-                <div key={index} className="flex flex-col items-center text-center">
-
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center"
+                >
                   {/* LOGO */}
                   <Image
                     src={item.logo}
                     alt={item.name}
-                    width={160}
-                    height={100}
-                    className="h-14 w-auto "
+                    width={400}
+                    height={250}
+                    className="w-40 h-auto object-contain"
                   />
 
                   {/* STARS */}

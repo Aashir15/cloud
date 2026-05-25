@@ -69,10 +69,12 @@ export default async function ServiceDetailPage({ params }) {
                 <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
 
                     <div>
-                        <img
+                        <Image
                             src={service.section1.image}
                             alt={service.section1.title}
-                            className="w-full rounded-2xl h-auto object-cover"
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto rounded-2xl object-cover"
                         />
                     </div>
 
@@ -124,10 +126,12 @@ export default async function ServiceDetailPage({ params }) {
                 <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
 
                     <div>
-                        <img
+                        <Image
                             src={service.section3.image}
                             alt={service.section3.title}
-                            className="w-full rounded-2xl h-auto object-cover"
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto rounded-2xl object-cover"
                         />
                     </div>
 

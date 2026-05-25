@@ -10,16 +10,17 @@ export default function Button({
     className = "",
 }) {
     const baseClass = `
-        inline-flex items-center justify-center gap-2
-        px-6 py-3 rounded-full
-        bg-primary text-black
-        font-medium
-        transition-all duration-300
-        cursor-pointer
-        hover:scale-105
-        active:scale-95
-        ${className}
-    `;
+    inline-flex items-center justify-center gap-2
+    px-6 py-3 rounded-full
+    bg-primary text-black
+    font-medium
+    transition-all duration-300
+    cursor-pointer
+    hover:scale-105
+    hover:shadow-[0_0_20px_rgba(122,255,237,0.45)]
+    active:scale-95
+    ${className}
+  `;
 
     const content = (
         <>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "./PrimaryBtn";
 
 export default function Hero() {
@@ -18,10 +19,20 @@ export default function Hero() {
                 />
             </video>
 
-            <img
+            {/* <div className="absolute inset-0 z-1 bg-[#011d19]/40" /> */}
+            
+            <div className="absolute inset-0 z-1">
+                <div className="absolute inset-0 bg-[#7AFFED]/10" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#00110F]/80 via-transparent to-[#00110F]/60" />
+            </div>
+
+            <Image
+                loading="eager"
+                src="/assets/z.png"
+                alt="hero img"
+                width={1200}
+                height={800}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-170 object-contain pointer-events-none opacity-100 mix-blend-color"
-                src="assets/z.png"
-                alt=""
             />
 
    
@@ -49,7 +60,7 @@ export default function Hero() {
                         </p>
 
                         <div className="mt-4 flex flex-wrap gap-4">
-                            <Button text="Get Started" />
+                            <Button href="/contact" text="Get Quote" />
                         </div>
 
                     </div>

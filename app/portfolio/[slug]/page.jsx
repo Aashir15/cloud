@@ -55,9 +55,14 @@ export default async function ProjectDetails({ params }) {
             </section>
 
 
-            <div className="max-w-7xl mx-auto px-6 ">
-                <img src={project.image}
-                    alt={project.title} />
+            <div className="max-w-7xl mx-auto px-6 pb-6">
+                <Image
+                    loading="lazy"
+                    src={project.image}
+                    alt={project.title}
+                    width={1200}
+                    height={800}
+                />
             </div>
 
 

@@ -129,7 +129,7 @@ function FloatingInput({
         outline-none
         transition-all duration-300
 
-        focus:border-purple-400
+        focus:border-green-900
         focus:bg-black/[0.05] dark:focus:bg-white/[0.05]
     `;
 

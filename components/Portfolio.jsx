@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "../data/projects";
+import Image from "next/image";
 
 export default function Portfolio() {
     return (
@@ -37,10 +38,11 @@ export default function Portfolio() {
 
                             {/* IMAGE */}
                             <div className="relative overflow-hidden rounded-xl mb-3 bg-white/5">
-
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.title}
+                                    width={1200}
+                                    height={800}
                                     className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
 

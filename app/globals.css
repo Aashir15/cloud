@@ -1,28 +1,18 @@
 @import "tailwindcss";
 @import 'remixicon/fonts/remixicon.css';
-@custom-variant dark (&:where(.dark, .dark *));
 
+/* DARK ONLY */
 :root {
-  --background: #ffffff;
-  --foreground: #00110F;
+  --background: #00110F;
+  --foreground: #ededed;
 
   --primary-color: #7AFFED;
   --secondary-color: #000000;
 
   --text-light: #f5f5f5;
-  --border-color: #e5e7eb;
-
-  --font-raleway: "Raleway", sans-serif;
-}
-
-/* MANUAL DARK MODE */
-.dark {
-  --background: #00110F;
-  --foreground: #ededed;
-
   --border-color: #262626;
 
-  --text-light: #f5f5f5;
+  --font-raleway: "Raleway", sans-serif;
 }
 
 @theme inline {
@@ -49,7 +39,6 @@ body {
 }
 
 @layer components {
-
   .heading {
     @apply text-3xl font-bold leading-tight;
   }
@@ -65,6 +54,6 @@ body {
   }
 
   .text {
-    @apply text-lg text-gray-900 dark:text-gray-300 leading-relaxed;
+    @apply text-lg text-gray-300 leading-relaxed;
   }
 }
