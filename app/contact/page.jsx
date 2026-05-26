@@ -7,6 +7,7 @@ import Button from "../../components/PrimaryBtn"
 import { Eye, EyeOff } from "lucide-react";
 
 export default function Contact() {
+    const [status, setStatus] = useState("");
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -21,6 +22,8 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setStatus("sending");
+
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
@@ -33,7 +36,8 @@ export default function Contact() {
             const data = await res.json();
 
             if (data.success) {
-                alert("Message Sent!");
+
+                setStatus("success");
 
                 setForm({
                     name: "",
@@ -41,12 +45,14 @@ export default function Contact() {
                     website: "",
                     message: "",
                 });
+
             } else {
-                alert("Something went wrong");
+                setStatus("error");
             }
 
         } catch (error) {
             console.log(error);
+            setStatus("error");
         }
     };
 
@@ -109,7 +115,7 @@ export default function Contact() {
                                 />
                             </div>
 
-                            
+
 
                             <FloatingInput
                                 label="Website"
@@ -126,8 +132,29 @@ export default function Contact() {
                                 value={form.message}
                                 onChange={handleChange}
                             />
-                            <Button type="submit" text="Submit Inquiry" />
+                            <Button
+                                type="submit"
+                                text={status === "sending" ? "Sending..." : "Submit Inquiry"}
+                                disabled={status === "sending"}
+                            />
 
+                            {status === "sending" && (
+                                <p className="text-sm text-gray-500">
+                                    Sending message...
+                                </p>
+                            )}
+
+                            {status === "success" && (
+                                <p className="text-sm text-green-600">
+                                    Your message has been sent successfully.
+                                </p>
+                            )}
+
+                            {status === "error" && (
+                                <p className="text-sm text-red-500">
+                                    Something went wrong. Please try again.
+                                </p>
+                            )}
                         </form>
                     </div>
 
