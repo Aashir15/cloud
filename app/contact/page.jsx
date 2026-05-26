@@ -22,6 +22,20 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (
+            !form.name.trim() ||
+            !form.email.trim() ||
+            !form.message.trim()
+        ) {
+            setStatus("error");
+
+            setTimeout(() => {
+                setStatus("");
+            }, 4000);
+
+            return;
+        }
+
         setStatus("sending");
 
         try {
@@ -54,7 +68,16 @@ export default function Contact() {
             console.log(error);
             setStatus("error");
         }
+
+        setTimeout(() => {
+            setStatus("");
+        }, 4000);
     };
+
+    const isFormValid =
+        form.name.trim() !== "" &&
+        form.email.trim() !== "" &&
+        form.message.trim() !== "";
 
     return (
         <>
@@ -135,7 +158,12 @@ export default function Contact() {
                             <Button
                                 type="submit"
                                 text={status === "sending" ? "Sending..." : "Submit Inquiry"}
-                                disabled={status === "sending"}
+                                disabled={status === "sending" || !isFormValid}
+                                className={
+                                    status === "sending" || !isFormValid
+                                        ? "opacity-50 pointer-events-none"
+                                        : ""
+                                }
                             />
 
                             {status === "sending" && (
@@ -152,7 +180,7 @@ export default function Contact() {
 
                             {status === "error" && (
                                 <p className="text-sm text-red-500">
-                                    Something went wrong. Please try again.
+                                    Please fill all required fields correctly.
                                 </p>
                             )}
                         </form>
