@@ -10,6 +10,7 @@ export default function Contact() {
     const [form, setForm] = useState({
         name: "",
         email: "",
+        website: "",
         message: "",
     });
 
@@ -17,9 +18,36 @@ export default function Contact() {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(form);
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                alert("Message Sent!");
+
+                setForm({
+                    name: "",
+                    email: "",
+                    website: "",
+                    message: "",
+                });
+            } else {
+                alert("Something went wrong");
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -62,24 +90,32 @@ export default function Contact() {
                     </div>
 
                     <div className="max-w-4xl mx-auto mt-12">
-                        <form className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-6">
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <FloatingInput
                                     label="Name"
                                     name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
                                 />
 
                                 <FloatingInput
                                     label="Email"
                                     type="email"
                                     name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
                                 />
                             </div>
+
+                            
 
                             <FloatingInput
                                 label="Website"
                                 name="website"
+                                value={form.website}
+                                onChange={handleChange}
                             />
 
                             <FloatingInput
@@ -87,6 +123,8 @@ export default function Contact() {
                                 name="message"
                                 textarea
                                 rows={7}
+                                value={form.message}
+                                onChange={handleChange}
                             />
                             <Button type="submit" text="Submit Inquiry" />
 
