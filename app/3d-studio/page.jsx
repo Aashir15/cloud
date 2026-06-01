@@ -49,7 +49,7 @@ export default function () {
 
                                 {/* IMAGE */}
                                 <div className="relative overflow-hidden rounded-xl mb-4 bg-white/5">
-                                
+
                                     <Image
                                         src={service.hero.image}
                                         alt={service.hero.title}

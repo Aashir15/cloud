@@ -35,7 +35,7 @@ export default function Footer() {
                         </Link>
 
                         <p className="mt-5 max-w-md text-sm leading-7 text-gray-600 dark:text-gray-400">
-                            ------------------------------ crafted with a focus on quality,
+                            Cloud Minds Tech crafted with a focus on quality,
                             consistency, and a simple customer experience.
                         </p>
 
@@ -59,7 +59,7 @@ export default function Footer() {
                             <a
                                 href="#"
                                 aria-label="LinkedIn"
-                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition"
+                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-white hover:border-blue-500 transition"
                             >
                                 <i className="ri-linkedin-fill"></i>
                             </a>
@@ -142,7 +142,7 @@ export default function Footer() {
                 {/* BOTTOM */}
                 <div className="mt-12 pt-6 border-t border-black/10 dark:border-white/10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                        © {new Date().getFullYear()} xxxxxx. All rights reserved.
+                        © {new Date().getFullYear()} Cloud Minds Tech. All rights reserved.
                     </p>
 
                     <div className="flex items-center gap-5 text-sm text-gray-500 dark:text-gray-400">

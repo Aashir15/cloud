@@ -77,7 +77,7 @@ export default function Home() {
 
             <h2 className="heading">
               <span className="text-primary">Cloud Minds Tech's </span>
-               Expanding Global Network
+              Expanding Global Network
             </h2>
           </div>
 
@@ -104,13 +104,13 @@ export default function Home() {
       <section className="md:py-20 py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-            <Image
-              src="/assets/h-1.webp"
-              alt="DotClick team working"
-              width={1200}
-              height={1200}
-              className="w-full max-w-130 h-auto rounded-2xl object-cover"
-            />
+          <Image
+            src="/assets/h-1.webp"
+            alt="Cloud Minds Tech team working"
+            width={1200}
+            height={1200}
+            className="w-full max-w-130 h-auto rounded-2xl object-cover"
+          />
 
           <div>
             <p className="badge mb-4">
@@ -143,7 +143,7 @@ export default function Home() {
             </p>
 
             <h2 className="heading mb-4">
-              Modern Design Meets Cutting 
+              Modern Design Meets Cutting
               <span className="text-primary"> Edge Technology</span>
             </h2>
             <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
@@ -151,15 +151,15 @@ export default function Home() {
             <FAQSection faqs={services[0]?.faq || []} />
           </div>
 
-            <div className="">
+          <div className="">
             <Image
               src="/assets/h-1.webp"
-              alt="DotClick team working"
+              alt="Cloud Minds Tech team working"
               width={1200}
               height={1200}
               className="w-full max-w-130 h-auto rounded-2xl object-cover"
             />
-            </div>
+          </div>
 
         </div>
       </section>
@@ -181,7 +181,7 @@ export default function Home() {
             <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
             <p className="text">
-              DotClick isn’t just about delivering exceptional tech
+              Cloud Minds Tech isn’t just about delivering exceptional tech
               solutions; it’s about earning your trust and setting
               industry benchmarks. Our numerous awards and
               consistently high ratings on platforms like Trustpilot

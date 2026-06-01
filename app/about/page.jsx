@@ -120,7 +120,7 @@ export default function page() {
                     <div className="">
                         <Image
                             src="/assets/h-1.webp"
-                            alt="DotClick team working"
+                            alt="Cloud Minds Tech team working"
                             width={1200}
                             height={1200}
                             className="w-full max-w-130 h-auto rounded-2xl object-cover"
@@ -147,7 +147,7 @@ export default function page() {
                         <div className="w-80 h-3 mb-6 bg-[repeating-linear-gradient(-45deg,#7AFFED_0,#7AFFED_4px,transparent_4px,transparent_8px)]" />
 
                         <p className="text">
-                            DotClick isn’t just about delivering exceptional tech
+                            Cloud Minds Tech isn’t just about delivering exceptional tech
                             solutions; it’s about earning your trust and setting
                             industry benchmarks. Our numerous awards and
                             consistently high ratings on platforms like Trustpilot
