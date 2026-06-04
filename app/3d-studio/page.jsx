@@ -4,6 +4,61 @@ import ServicesBox from "../../components/ServicesBox";
 import { studio } from "../../data/studio";
 
 
+export const metadata = {
+    title: "3d Studio",
+    description:
+        "Explore Cloud Minds Tech's 3D Studio services including 3D visualization, rendering, animation, product modeling, and architectural visualization for modern digital experiences.",
+
+    keywords: [
+        "Cloud Minds Tech",
+        "3D Studio",
+        "3D Visualization Services",
+        "3D Rendering",
+        "3D Animation",
+        "Product Modeling",
+        "Architectural Visualization",
+        "CGI Services",
+        "3D Design Studio",
+        "Motion Graphics",
+        "Digital Rendering Services",
+    ],
+
+    openGraph: {
+        title: "3D Studio Services | Cloud Minds Tech",
+        description:
+            "Professional 3D studio services including modeling, animation, rendering, and visualization for businesses and creative projects.",
+        url: "https://www.cloudmindstechllc.com/3d-studio",
+        siteName: "Cloud Minds Tech",
+        images: [
+            {
+                url: "/assets/service-4.avif",
+                width: 1200,
+                height: 630,
+                alt: "3D Studio - Cloud Minds Tech",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "3D Studio Services | Cloud Minds Tech",
+        description:
+            "High-quality 3D visualization, animation, and rendering services for brands and businesses.",
+        images: ["/assets/service-4.avif"],
+    },
+
+    alternates: {
+        canonical: "https://www.cloudmindstechllc.com/3d-studio",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
+
 export default function () {
     return (
         <>

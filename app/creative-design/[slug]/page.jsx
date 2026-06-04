@@ -1,14 +1,14 @@
-import Image from "next/image";
-import { notFound } from "next/navigation";
+// app/services/[slug]/page.jsx
 
-import { growthMarket } from "../../../data/growthMarket";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { services } from "../../../data/creative&design";
 import FAQSection from "../../../components/Faq";
 
 export async function generateMetadata({ params }) {
-
     const { slug } = await params;
 
-    const service = growthMarket.find(
+    const service = services.find(
         (item) => item.slug === slug
     );
 
@@ -19,8 +19,36 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-        title: `Cloud Minds Teach | ${service.hero.title}`,
+        title: service.hero.title,
+
         description: service.hero.description,
+
+        openGraph: {
+            title: `${service.hero.title} | Cloud Minds Tech`,
+            description: service.hero.description,
+            images: [
+                {
+                    url: service.hero.image,
+                    alt: service.hero.title,
+                },
+            ],
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: `${service.hero.title} | Cloud Minds Tech`,
+            description: service.hero.description,
+            images: [service.hero.image],
+        },
+
+        alternates: {
+            canonical: `/creative-design/${slug}`,
+        },
+
+        robots: {
+            index: true,
+            follow: true,
+        },
     };
 }
 
@@ -28,13 +56,14 @@ export default async function ServiceDetailPage({ params }) {
 
     const { slug } = await params;
 
-    const service = growthMarket.find(
+    const service = services.find(
         (item) => item.slug === slug
     );
 
     if (!service) {
         notFound();
     }
+
     return (
         <>
             <section className="relative w-full md:min-h-150 min-h-100">
@@ -106,7 +135,7 @@ export default async function ServiceDetailPage({ params }) {
 
                     <div>
                         <h2 className="heading mb-6">FAQ</h2>
-                        <FAQSection faqs={service.faq} />
+                        <FAQSection faqs={service.faq} /> 
                     </div>
 
                     <div>

@@ -34,24 +34,24 @@ export default function Header() {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "Portfolio", href: "/portfolio" },
+        // { name: "Portfolio", href: "/portfolio" },
         { name: "About", href: "/about" },
     ];
 
     const megaMenus = [
         {
             title: "Creative & Design Wing",
-            href: "/creative&design",
+            href: "/creative-design",
             data: services,
         },
         {
             title: "Tech & Development",
-            href: "/tech-&-development",
+            href: "/tech-development",
             data: techDev,
         },
         {
             title: "Growth & Marketing Wing",
-            href: "/growth-&-marketing",
+            href: "/growth-marketing",
             data: growthMarket,
         },
         {

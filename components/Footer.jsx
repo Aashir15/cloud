@@ -41,15 +41,19 @@ export default function Footer() {
 
                         <div className="mt-6 flex items-center gap-3 text-lg text-gray-700 dark:text-gray-300">
                             <a
-                                href="#"
+                                href="https://www.facebook.com/people/Cloud-Minds-Tech/61574807023512/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="Facebook"
-                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-blue-700 hover:text-white transition"
+                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"
                             >
                                 <i className="ri-facebook-fill"></i>
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.instagram.com/cloud_minds_tech/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="Instagram"
                                 className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-pink-500 hover:text-white transition"
                             >
@@ -57,11 +61,22 @@ export default function Footer() {
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/company/cloud-minds-tech-llc"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="LinkedIn"
-                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-white hover:border-blue-500 transition"
+                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
                             >
                                 <i className="ri-linkedin-fill"></i>
+                            </a>
+                            <a
+                                href="https://x.com/CloudsMindsTech"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition"
+                            >
+                                <i className="ri-twitter-x-fill"></i>
                             </a>
                         </div>
                     </div>
@@ -112,7 +127,7 @@ export default function Footer() {
                                     className="mt-0.5 text-primary"
                                 />
 
-                                <span>+1 (555) 240-0188</span>
+                                <span>+92 337 2111623</span>
                             </a>
 
                             <a
@@ -124,7 +139,7 @@ export default function Footer() {
                                     className="mt-0.5 text-primary"
                                 />
 
-                                <span>info@gmail.com</span>
+                                <span>support@cloudmindstechllc.com</span>
                             </a>
 
                             <div className="flex gap-3 text-sm text-gray-600 dark:text-gray-400">
@@ -133,7 +148,7 @@ export default function Footer() {
                                     className="mt-0.5 shrink-0 text-primary"
                                 />
 
-                                <span>125 Mercer Street, New York</span>
+                                <span>Karachi, Pakistan</span>
                             </div>
                         </div>
                     </div>

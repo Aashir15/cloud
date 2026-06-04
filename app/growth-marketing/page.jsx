@@ -1,8 +1,64 @@
 import Image from "next/image";
 import Link from "next/link"
 import ServicesBox from "../../components/ServicesBox";
-import { techDev } from "../../data/techDev";
+import { growthMarket } from "../../data/growthMarket";
 
+
+export const metadata = {
+    title: "Growth & Marketing Services ",
+    description:
+        "Explore Cloud Minds Tech's Growth & Marketing services including digital marketing, SEO, social media marketing, branding, and lead generation strategies to grow your business online.",
+
+    keywords: [
+        "Cloud Minds Tech",
+        "Growth Marketing",
+        "Digital Marketing Services",
+        "SEO Services",
+        "Social Media Marketing",
+        "Branding Services",
+        "Lead Generation",
+        "Online Marketing",
+        "Performance Marketing",
+        "Content Marketing",
+        "Marketing Strategy",
+        "Business Growth Solutions",
+    ],
+
+    openGraph: {
+        title: "Growth & Marketing Services | Cloud Minds Tech",
+        description:
+            "We help businesses grow with powerful marketing strategies including SEO, social media, branding, and digital campaigns.",
+        url: "https://www.cloudmindstechllc.com/growth-and-marketing",
+        siteName: "Cloud Minds Tech",
+        images: [
+            {
+                url: "/assets/service-3.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Growth & Marketing - Cloud Minds Tech",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Growth & Marketing Services | Cloud Minds Tech",
+        description:
+            "SEO, branding, social media, and digital marketing services to grow your business online.",
+        images: ["/assets/service-3.jpg"],
+    },
+
+    alternates: {
+        canonical: "https://www.cloudmindstechllc.com/growth-and-marketing",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function () {
     return (
@@ -10,7 +66,7 @@ export default function () {
 
             <section className="relative w-full md:min-h-150 min-h-100">
                 <Image
-                    src="/assets/service.png"
+                    src="/assets/service-3.jpg"
                     alt="Portfolio Banner"
                     fill
                     priority
@@ -23,7 +79,7 @@ export default function () {
                     <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pb-16 lg:pb-24">
 
                         <p className="heading text-white">
-                            Tech & Development
+                            Growth & Marketing Wing
                         </p>
 
                         <p className="text text-gray-200! max-w-2xl mt-4">
@@ -39,11 +95,11 @@ export default function () {
 
                     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                        {techDev.map((service) => (
+                        {growthMarket.map((service) => (
 
                             <Link
                                 key={service.slug}
-                                href={`/tech-&-development/${service.slug}`}
+                                href={`/growth-marketing/${service.slug}`}
                                 className="group"
                             >
 

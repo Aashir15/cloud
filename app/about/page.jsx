@@ -2,10 +2,6 @@ import Image from "next/image";
 import FAQSection from "../../components/Faq";
 import { services } from "../../data/creative&design";
 
-export const metadata = {
-    title: "Cloud Minds Tech | About Us",
-};
-
 const partners = [
     {
         name: "WordPress",
@@ -65,6 +61,57 @@ const ratings = [
         rating: "4.6 Rating on Toptal",
     },
 ];
+
+
+export const metadata = {
+    title: "About Us",
+
+    description:
+        "Learn about Cloud Minds Tech, a leading technology company dedicated to delivering innovative software development, AI solutions, web development, mobile applications, and digital transformation services worldwide.",
+
+    keywords: [
+        "About Cloud Minds Tech",
+        "Software Development Company",
+        "Technology Solutions",
+        "AI Development Company",
+        "Web Development Agency",
+        "Mobile App Development",
+        "Digital Transformation",
+        "Cloud Minds Tech Team",
+        "Innovation and Technology",
+    ],
+
+    openGraph: {
+        title: "About Us | Cloud Minds Tech",
+        description:
+            "Discover the story, mission, and vision behind Cloud Minds Tech and our commitment to delivering innovative technology solutions.",
+        images: [
+            {
+                url: "/assets/about.png",
+                width: 1200,
+                height: 630,
+                alt: "About Cloud Minds Tech",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "About Us | Cloud Minds Tech",
+        description:
+            "Learn about Cloud Minds Tech, our mission, values, and commitment to innovation.",
+        images: ["/assets/about.png"],
+    },
+
+    alternates: {
+        canonical: "/about",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function page() {
     return (

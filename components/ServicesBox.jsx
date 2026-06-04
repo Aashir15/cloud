@@ -13,7 +13,7 @@ export default function Services() {
 
                         <Link
                             key={service.slug}
-                            href={`/creative&design/${service.slug}`}
+                            href={`/creative-design/${service.slug}`}
                             className="group"
                         >
 

@@ -6,6 +6,7 @@ import { useState } from "react";
 import Button from "../../components/PrimaryBtn"
 import { Eye, EyeOff } from "lucide-react";
 
+
 export default function Contact() {
     const [status, setStatus] = useState("");
     const [form, setForm] = useState({
@@ -191,8 +192,6 @@ export default function Contact() {
         </>
     );
 }
-
-
 
 // components/ui/InputField.jsx
 

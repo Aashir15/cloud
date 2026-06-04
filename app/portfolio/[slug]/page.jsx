@@ -2,6 +2,51 @@ import { projects } from "../../../data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
+
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+
+    const project = projects.find((p) => p.slug === slug);
+
+    if (!project) {
+        return {
+            title: "Project Not Found",
+        };
+    }
+
+    return {
+        title: project.title,
+        description: project.description,
+
+        openGraph: {
+            title: `${project.title} | Cloud Minds Tech`,
+            description: project.description,
+            images: [
+                {
+                    url: project.image,
+                    alt: project.title,
+                },
+            ],
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: `${project.title} | Cloud Minds Tech`,
+            description: project.description,
+            images: [project.image],
+        },
+
+        alternates: {
+            canonical: `/portfolio/${slug}`,
+        },
+
+        robots: {
+            index: true,
+            follow: true,
+        },
+    };
+}
+
 export default async function ProjectDetails({ params }) {
     const { slug } = await params;
 

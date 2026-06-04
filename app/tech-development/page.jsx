@@ -1,8 +1,59 @@
 import Image from "next/image";
 import Link from "next/link"
 import ServicesBox from "../../components/ServicesBox";
-import { growthMarket } from "../../data/growthMarket";
+import { techDev } from "../../data/techDev";
 
+
+export const metadata = {
+    title: "Tech & Development",
+
+    description:
+        "Explore Cloud Minds Tech's Tech & Development services including web development, mobile applications, software solutions, backend systems, and custom digital products built for modern businesses.",
+
+    keywords: [
+        "Tech Development",
+        "Web Development Services",
+        "Mobile App Development",
+        "Software Development Company",
+        "Custom Software Solutions",
+        "Backend Development",
+        "Frontend Development",
+        "Cloud Minds Tech",
+        "Full Stack Development",
+        "API Development",
+    ],
+
+    openGraph: {
+        title: "Tech & Development | Cloud Minds Tech",
+        description:
+            "Discover our Tech & Development services including scalable web apps, mobile apps, and custom software solutions.",
+        images: [
+            {
+                url: "/assets/service.png",
+                width: 1200,
+                height: 630,
+                alt: "Tech & Development",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Tech & Development | Cloud Minds Tech",
+        description:
+            "Web development, mobile apps, software engineering, and custom tech solutions by Cloud Minds Tech.",
+        images: ["/assets/service.png"],
+    },
+
+    alternates: {
+        canonical: "/tech-development",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function () {
     return (
@@ -10,7 +61,7 @@ export default function () {
 
             <section className="relative w-full md:min-h-150 min-h-100">
                 <Image
-                    src="/assets/service-3.jpg"
+                    src="/assets/service.png"
                     alt="Portfolio Banner"
                     fill
                     priority
@@ -23,7 +74,7 @@ export default function () {
                     <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pb-16 lg:pb-24">
 
                         <p className="heading text-white">
-                            Growth & Marketing Wing
+                            Tech & Development
                         </p>
 
                         <p className="text text-gray-200! max-w-2xl mt-4">
@@ -39,11 +90,11 @@ export default function () {
 
                     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                        {growthMarket.map((service) => (
+                        {techDev.map((service) => (
 
                             <Link
                                 key={service.slug}
-                                href={`/growth-&-marketing/${service.slug}`}
+                                href={`/tech-development/${service.slug}`}
                                 className="group"
                             >
 

@@ -1,27 +1,71 @@
-// app/services/[slug]/page.jsx
-
-import { notFound } from "next/navigation";
 import Image from "next/image";
-import { services } from "../../../data/creative&design";
+import { notFound } from "next/navigation";
+
+import { growthMarket } from "../../../data/growthMarket";
 import FAQSection from "../../../components/Faq";
 
 export async function generateMetadata({ params }) {
-
     const { slug } = await params;
 
-    const service = services.find(
-        (item) => item.slug === slug
-    );
+    const service = growthMarket.find((item) => item.slug === slug);
 
     if (!service) {
         return {
-            title: "Service Not Found",
+            title: "Service Not Found | Cloud Minds Tech",
+            description: "The requested service page could not be found.",
         };
     }
 
     return {
-        title: `Cloud Minds Teach | ${service.hero.title}`,
+        title: `${service.hero.title} | Cloud Minds Tech`,
         description: service.hero.description,
+
+        keywords: [
+            service.hero.title,
+            "Cloud Minds Tech",
+            "Growth Marketing Services",
+            "Digital Marketing",
+            "SEO Services",
+            "Social Media Marketing",
+            "PPC Advertising",
+            "Online Marketing",
+            "Lead Generation",
+            "Performance Marketing",
+            "Business Growth Solutions",
+        ],
+
+        openGraph: {
+            title: `${service.hero.title} | Cloud Minds Tech`,
+            description: service.hero.description,
+            url: `https://yourdomain.com/growth-and-marketing/${slug}`,
+            siteName: "Cloud Minds Tech",
+            images: [
+                {
+                    url: service.hero.image,
+                    width: 1200,
+                    height: 630,
+                    alt: service.hero.title,
+                },
+            ],
+            locale: "en_US",
+            type: "website",
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: `${service.hero.title} | Cloud Minds Tech`,
+            description: service.hero.description,
+            images: [service.hero.image],
+        },
+
+        alternates: {
+            canonical: `https://yourdomain.com/growth-and-marketing/${slug}`,
+        },
+
+        robots: {
+            index: true,
+            follow: true,
+        },
     };
 }
 
@@ -29,14 +73,13 @@ export default async function ServiceDetailPage({ params }) {
 
     const { slug } = await params;
 
-    const service = services.find(
+    const service = growthMarket.find(
         (item) => item.slug === slug
     );
 
     if (!service) {
         notFound();
     }
-
     return (
         <>
             <section className="relative w-full md:min-h-150 min-h-100">
@@ -108,7 +151,7 @@ export default async function ServiceDetailPage({ params }) {
 
                     <div>
                         <h2 className="heading mb-6">FAQ</h2>
-                        <FAQSection faqs={service.faq} /> 
+                        <FAQSection faqs={service.faq} />
                     </div>
 
                     <div>

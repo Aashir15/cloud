@@ -5,22 +5,68 @@ import { studio } from "../../../data/studio";
 import FAQSection from "../../../components/Faq";
 
 export async function generateMetadata({ params }) {
-
     const { slug } = await params;
 
-    const service = studio.find(
-        (item) => item.slug === slug
-    );
+    const service = studio.find((item) => item.slug === slug);
 
     if (!service) {
         return {
-            title: "Service Not Found",
+            title: "Service Not Found | Cloud Minds Tech",
+            description: "The requested 3D Studio service page could not be found.",
         };
     }
 
     return {
-        title: `Cloud Minds Teach | ${service.hero.title}`,
+        title: `${service.hero.title} | Cloud Minds Tech`,
         description: service.hero.description,
+
+        keywords: [
+            service.hero.title,
+            "Cloud Minds Tech",
+            "3D Studio Services",
+            "3D Modeling",
+            "3D Animation",
+            "3D Design",
+            "Product Visualization",
+            "Architectural Visualization",
+            "3D Rendering",
+            "CGI Services",
+            "Motion Graphics",
+            "Digital 3D Solutions",
+        ],
+
+        openGraph: {
+            title: `${service.hero.title} | Cloud Minds Tech`,
+            description: service.hero.description,
+            url: `https://www.cloudmindstechllc.com/3d-studio/${slug}`,
+            siteName: "Cloud Minds Tech",
+            images: [
+                {
+                    url: service.hero.image,
+                    width: 1200,
+                    height: 630,
+                    alt: service.hero.title,
+                },
+            ],
+            locale: "en_US",
+            type: "website",
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: `${service.hero.title} | Cloud Minds Tech`,
+            description: service.hero.description,
+            images: [service.hero.image],
+        },
+
+        alternates: {
+            canonical: `https://www.cloudmindstechllc.com/3d-studio/${slug}`,
+        },
+
+        robots: {
+            index: true,
+            follow: true,
+        },
     };
 }
 

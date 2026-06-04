@@ -1,10 +1,36 @@
 import Link from "next/link";
 
 export const metadata = {
-    title: "Cloud Minds Tech | Term & Conditions",
+    title: "Terms & Conditions",
     description:
-        "Read our privacy policy to understand how we collect, use, and protect your personal data.",
-    keywords: ["privacy policy", "data protection", "your brand"],
+        "Read the Terms & Conditions of Cloud Minds Tech to understand the rules, responsibilities, and conditions governing the use of our website and services.",
+    keywords: [
+        "Cloud Minds Tech",
+        "Terms and Conditions",
+        "Website Terms",
+        "Terms of Service",
+        "User Agreement",
+        "Legal Terms",
+        "Technology Services",
+        "Software Development Terms",
+        "Website Usage Policy"
+    ],
+    robots: {
+        index: true,
+        follow: true,
+    },
+    openGraph: {
+        title: "Terms & Conditions",
+        description:
+            "Review the terms governing the use of Cloud Minds Tech's website and services.",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Terms & Conditions",
+        description:
+            "Read the Terms & Conditions for using Cloud Minds Tech services and website.",
+    },
 };
 
 export default function TermsCondition() {

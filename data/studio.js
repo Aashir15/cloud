@@ -67,62 +67,6 @@ export const studio = [
         ],
     },
 
-    // {
-    //     slug: "3d-rendering",
-
-    //     hero: {
-    //         title: "3D Rendering",
-    //         image: "/assets/s-2.jpg",
-    //         description:
-    //             "High-quality 3D rendering services by Cloud Minds Tech for realistic visual presentations and digital experiences.",
-    //     },
-
-    //     section1: {
-    //         badge: "Visualization Services",
-
-    //         title: "Realistic 3D",
-    //         highlight: "Rendering",
-
-    //         image: "/assets/web-dev-1.png",
-
-    //         paragraphs: [
-    //             "Cloud Minds Tech provides professional 3D rendering services that transform concepts and models into realistic visual presentations. Our rendering solutions help businesses showcase products, interiors, architectural designs, and creative projects with stunning detail, lighting, and realism.",
-    //         ],
-    //     },
-
-    //     section2: {
-    //         title: "Advanced Rendering Solutions",
-
-    //         content:
-    //             "3D rendering allows businesses and creators to present ideas with photorealistic quality before production or launch. Our rendering process focuses on lighting, textures, reflections, and environment details to create visually engaging outputs suitable for marketing, presentations, and client showcases.",
-    //     },
-
-    //     section3: {
-    //         badge: "What We Offer",
-
-    //         title: "Professional 3D Rendering Services",
-
-    //         image: "/assets/web-dev-2.png",
-
-    //         content:
-    //             "At Cloud Minds Tech, we offer complete 3D rendering services for products, architecture, interiors, animations, and advertising projects. Our team combines advanced rendering techniques with creative design to produce visually impactful and realistic renders that capture attention and communicate ideas effectively.",
-    //     },
-
-    //     faq: [
-    //         {
-    //             question: "What types of rendering services do you provide?",
-    //             answer:
-    //                 "We provide product rendering, architectural rendering, interior visualization, and commercial rendering services.",
-    //         },
-
-    //         {
-    //             question: "Can you create photorealistic renders?",
-    //             answer:
-    //                 "Yes, Cloud Minds Tech specializes in creating highly realistic and visually detailed 3D renders.",
-    //         },
-    //     ],
-    // },
-
     {
         slug: "3d-animation",
 

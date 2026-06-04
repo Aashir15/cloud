@@ -1,12 +1,29 @@
 import Link from "next/link";
 
 export const metadata = {
-    title: "Cloud Minds Tech | Privacy Policy",
+    title: "Privacy Policy",
     description:
-        "Read our privacy policy to understand how we collect, use, and protect your personal data.",
-    keywords: ["privacy policy", "data protection", "your brand"],
+        "Read the Cloud Minds Tech Privacy Policy to learn how we collect, use, store, and protect your personal information.",
+    keywords: [
+        "Cloud Minds Tech",
+        "Privacy Policy",
+        "Data Protection",
+        "Personal Information",
+        "User Privacy",
+        "Website Privacy",
+        "Technology Company Privacy Policy"
+    ],
+    robots: {
+        index: true,
+        follow: true,
+    },
+    openGraph: {
+        title: "Privacy Policy",
+        description:
+            "Learn how Cloud Minds Tech protects and handles your personal information.",
+        type: "website",
+    },
 };
-
 
 export default function PrivacyPolicy() {
     return (

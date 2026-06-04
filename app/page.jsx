@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
-import Portfolio from "../components/Portfolio";
+// import Portfolio from "../components/Portfolio";
 import FAQSection from "../components/Faq";
 import { services } from "../data/creative&design";
 
@@ -60,6 +60,64 @@ const ratings = [
     rating: "4.6 Rating on Toptal",
   },
 ];
+
+
+export const metadata = {
+
+  metadataBase: new URL("https://www.cloudmindstechllc.com/"),
+  title: "Cloud Minds Tech | Software Development, AI & Digital Solutions",
+  description:
+    "Cloud Minds Tech delivers innovative software development, AI-powered solutions, web development, mobile applications, UI/UX design, and digital transformation services for businesses worldwide.",
+
+  keywords: [
+    "Cloud Minds Tech",
+    "Software Development Company",
+    "AI Solutions",
+    "Web Development",
+    "Mobile App Development",
+    "UI UX Design",
+    "Digital Transformation",
+    "Custom Software Development",
+    "Shopify Development",
+    "WordPress Development",
+    "Technology Solutions",
+  ],
+
+  openGraph: {
+    title: "Cloud Minds Tech | Software Development, AI & Digital Solutions",
+    description:
+      "Empowering businesses through innovative software, AI solutions, web development, and digital transformation services.",
+    url: "https://www.cloudmindstechllc.com/",
+    siteName: "Cloud Minds Tech",
+    images: [
+      {
+        url: "/assets/cloud-mind-tech.png",
+        width: 1200,
+        height: 630,
+        alt: "Cloud Minds Tech",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Cloud Minds Tech | Software Development, AI & Digital Solutions",
+    description:
+      "Innovative software development, AI solutions, web applications, mobile apps, and digital transformation services.",
+    images: ["/assets/cloud-mind-tech.png"],
+  },
+
+  alternates: {
+    canonical: "https://www.cloudmindstechllc.com/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function Home() {
   return (
@@ -153,11 +211,11 @@ export default function Home() {
 
           <div className="">
             <Image
-              src="/assets/h-1.webp"
+              src="/assets/cloud-minds-tech-home-1.webp"
               alt="Cloud Minds Tech team working"
               width={1200}
               height={1200}
-              className="w-full max-w-130 h-auto rounded-2xl object-cover"
+              className="w-full max-w-160 h-auto rounded-2xl object-cover"
             />
           </div>
 
@@ -236,7 +294,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Portfolio />
+      {/* <Portfolio /> */}
 
     </>
   );
