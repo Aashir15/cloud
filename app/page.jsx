@@ -11,17 +11,13 @@ const partners = [
     image: "/assets/CloudMindsTeach-Wordpress-Partners.png",
   },
   {
-    name: "RedRhinoz",
-    image: "/assets/CloudMindsTeach-RedRhinoz-Partners.png",
-  },
-  {
     name: "Shopify",
     image: "/assets/CloudMindsTeach-Shopify-Partners.png",
   },
-  {
-    name: "Xiom",
-    image: "/assets/CloudMindsTeach-Xiom-Software-Company-Partners.png",
-  },
+  // {
+  //   name: "Xiom",
+  //   image: "/assets/CloudMindsTeach-Xiom-Software-Company-Partners.png",
+  // },
   {
     name: "OpenAI",
     image: "/assets/CloudMindsTeach-OpenAiPartners.png",
@@ -138,8 +134,7 @@ export default function Home() {
               Expanding Global Network
             </h2>
           </div>
-
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
             {partners.map((partner, index) => (
               <div
                 key={index}
@@ -154,7 +149,6 @@ export default function Home() {
                 />
               </div>
             ))}
-
           </div>
         </div>
       </section>

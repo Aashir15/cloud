@@ -181,7 +181,7 @@ export default function Contact() {
 
                             {status === "error" && (
                                 <p className="text-sm text-red-500">
-                                    Please fill all required fields correctly.
+                                    Something went wrong while sending the message.
                                 </p>
                             )}
                         </form>

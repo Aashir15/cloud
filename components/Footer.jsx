@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Footer() {
     const links = [
         { name: "Home", path: "/" },
-        { name: "Portfolio", path: "/portfolio" },
+        // { name: "Portfolio", path: "/portfolio" },
         { name: "About", path: "/about" },
         { name: "Contact", path: "/contact" },
     ];
