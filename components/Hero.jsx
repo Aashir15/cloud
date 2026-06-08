@@ -47,7 +47,7 @@ export default function Hero() {
                         </span>
 
                         <h1 className="text-4xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-                            <span className="text-primary">#1 Global </span>
+                            <span className="text-primary">#01 Global </span>
                             Leading
                             <br />
                             Software Company
