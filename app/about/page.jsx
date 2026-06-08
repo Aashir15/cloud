@@ -152,6 +152,7 @@ export default function page() {
 
                     <div>
                         <p className="badge mb-4">
+                            
                             Redefining Digital Aesthetics
                         </p>
 
