@@ -35,11 +35,11 @@ export const metadata = {
 
 export default function TermsCondition() {
     return (
-        <main className="mt-20 text-gray-700 dark:text-gray-300">
+        <main className="mt-20 text-gray-300">
             <div className="max-w-4xl mx-auto px-6 py-20">
 
                 {/* HEADER */}
-                <h1 className="text-4xl font-bold text-black dark:text-white">
+                <h1 className="text-4xl font-bold text-white">
                     Terms & Conditions
                 </h1>
 
@@ -57,7 +57,7 @@ export default function TermsCondition() {
 
                 {/* USE OF WEBSITE */}
                 <section className="mt-10">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         1. Use of Website
                     </h2>
 
@@ -70,7 +70,7 @@ export default function TermsCondition() {
 
                 {/* PRODUCTS / SERVICES */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         2. Products & Services
                     </h2>
 
@@ -82,7 +82,7 @@ export default function TermsCondition() {
 
                 {/* ORDERS */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         3. Orders & Payments
                     </h2>
 
@@ -95,7 +95,7 @@ export default function TermsCondition() {
 
                 {/* LIMITATION */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         4. Limitation of Liability
                     </h2>
 
@@ -107,7 +107,7 @@ export default function TermsCondition() {
 
                 {/* CHANGES */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         5. Changes to Terms
                     </h2>
 
@@ -119,7 +119,7 @@ export default function TermsCondition() {
 
                 {/* CONTACT */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         6. Contact Us
                     </h2>
 
@@ -129,7 +129,7 @@ export default function TermsCondition() {
 
                     <Link
                         href="/contact"
-                        className="inline-block mt-4 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                        className="inline-block mt-4 text-sm text-blue-400 hover:underline"
                     >
                         Go to Contact Page →
                     </Link>

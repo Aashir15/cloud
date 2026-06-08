@@ -27,15 +27,15 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
     return (
-        <main className="mt-20 text-gray-700 dark:text-gray-300">
+        <main className="mt-20 text-gray-300 ">
             <div className="max-w-4xl mx-auto px-6 py-20">
 
                 {/* HEADER */}
-                <h1 className="text-4xl font-bold text-black dark:text-white">
+                <h1 className="text-4xl font-bold text-white">
                     Privacy Policy
                 </h1>
 
-                <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-4 text-sm text-gray-400">
                     Last updated: {new Date().toLocaleDateString()}
                 </p>
 
@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
 
                 {/* INFO COLLECTION */}
                 <section className="mt-10">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         1. Information We Collect
                     </h2>
 
@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
 
                 {/* HOW WE USE */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         2. How We Use Your Information
                     </h2>
 
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
 
                 {/* COOKIES */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         3. Cookies
                     </h2>
 
@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
 
                 {/* SECURITY */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         4. Data Security
                     </h2>
 
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
 
                 {/* CONTACT */}
                 <section className="mt-8">
-                    <h2 className="text-xl font-semibold text-black dark:text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         5. Contact Us
                     </h2>
 
@@ -111,7 +111,7 @@ export default function PrivacyPolicy() {
 
                     <Link
                         href="/contact"
-                        className="inline-block mt-4 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                        className="inline-block mt-4 text-sm text-blue-400 hover:underline"
                     >
                         Go to Contact Page →
                     </Link>
