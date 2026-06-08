@@ -211,18 +211,18 @@ function FloatingInput({
 
     const inputStyles = `
         w-full rounded-2xl
-        border border-black/10 dark:border-white/10
+        border border-white/10
         
-        bg-black/[0.03] dark:bg-white/[0.03]
+        bg-white/[0.03]
 
-        text-black dark:text-white
-        placeholder:text-black/40 dark:placeholder:text-white/40
+        text-white
+       placeholder:text-white/40
 
         outline-none
         transition-all duration-300
 
         focus:border-green-900
-        focus:bg-black/[0.05] dark:focus:bg-white/[0.05]
+        focus:bg-white/[0.05]
     `;
 
     return (
@@ -257,10 +257,9 @@ function FloatingInput({
                     onClick={() => setShow(!show)}
                     className="
                         absolute right-4 top-1/2 -translate-y-1/2
-                        text-black/40 dark:text-white/40
-                        hover:text-black dark:hover:text-white
-                        transition-colors
-                    "
+                        text-white/40
+                       hover:text-white
+                        transition-colors"
                 >
                     {show ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
