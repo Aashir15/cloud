@@ -118,7 +118,7 @@ export default function Footer() {
                         </p>
 
                         <div className="mt-6 space-y-4">
-                            <a
+                            {/* <a
                                 href="tel:3052656226"
                                 className="flex gap-3 text-sm text-gray-200 hover:text-white transition"
                             >
@@ -128,11 +128,31 @@ export default function Footer() {
                                 />
 
                                 <span>+92 337 2111623</span>
+                            </a> */}
+                            <a
+                                className="flex gap-3 text-sm text-gray-200 hover:text-white transition"
+                                href="tel:+923372111623"
+                                onClick={() => {
+                                    if (typeof window !== "undefined" && window.gtag) {
+                                        window.gtag("event", "phone_click");
+                                    }
+                                }}
+                            >
+                                <Phone
+                                    size={18}
+                                    className="mt-0.5 text-primary"
+                                />
+                                <span>+92 337 2111623</span>
                             </a>
 
                             <a
                                 href="mailto:info@gmail.com"
                                 className="flex gap-3 text-sm text-gray-200 hover:text-white transition"
+                                onClick={() => {
+                                    if (typeof window !== "undefined" && window.gtag) {
+                                        window.gtag("event", "email_click");
+                                    }
+                                }}
                             >
                                 <Mail
                                     size={18}

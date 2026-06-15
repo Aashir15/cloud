@@ -52,6 +52,10 @@ export default function Contact() {
 
             if (data.success) {
 
+                if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag("event", "contact_form_submit");
+                }
+
                 setStatus("success");
 
                 setForm({
@@ -60,8 +64,9 @@ export default function Contact() {
                     website: "",
                     message: "",
                 });
+            }
 
-            } else {
+            else {
                 setStatus("error");
             }
 
@@ -99,7 +104,7 @@ export default function Contact() {
                     <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pb-16 lg:pb-24">
                         <p className="heading text-white">Contact</p>
                         <p className="text text-gray-200! max-w-2xl mt-4">
-                            Let’s talk about your next project.
+                            Let’s talk about your nex project.
                         </p>
                     </div>
                 </div>
