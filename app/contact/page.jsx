@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import Button from "../../components/PrimaryBtn"
 import { Eye, EyeOff } from "lucide-react";
+import CustomSelect from "../../components/CustomSelect";
 
 
 export default function Contact() {
@@ -12,7 +13,8 @@ export default function Contact() {
     const [form, setForm] = useState({
         name: "",
         email: "",
-        website: "",
+        phone: "",
+        service: "",
         message: "",
     });
 
@@ -26,14 +28,12 @@ export default function Contact() {
         if (
             !form.name.trim() ||
             !form.email.trim() ||
+            !form.phone.trim() ||
+            !form.service.trim() ||
             !form.message.trim()
         ) {
             setStatus("error");
-
-            setTimeout(() => {
-                setStatus("");
-            }, 4000);
-
+            setTimeout(() => setStatus(""), 4000);
             return;
         }
 
@@ -61,7 +61,8 @@ export default function Contact() {
                 setForm({
                     name: "",
                     email: "",
-                    website: "",
+                    phone: "",
+                    service: "",
                     message: "",
                 });
             }
@@ -83,6 +84,8 @@ export default function Contact() {
     const isFormValid =
         form.name.trim() !== "" &&
         form.email.trim() !== "" &&
+        form.phone.trim() !== "" &&
+        form.service.trim() !== "" &&
         form.message.trim() !== "";
 
     return (
@@ -146,12 +149,40 @@ export default function Contact() {
 
 
 
-                            <FloatingInput
-                                label="Website"
-                                name="website"
-                                value={form.website}
-                                onChange={handleChange}
-                            />
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <FloatingInput
+                                    label="Phone"
+                                    type="tel"
+                                    name="phone"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                />
+
+                                <CustomSelect
+                                    name="service"
+                                    value={form.service}
+                                    onChange={handleChange}
+                                    placeholder="Which service are you interested in?"
+                                    options={[
+                                        "UI/UX Design",
+                                        "Branding",
+                                        "Graphic Designing",
+                                        "Package Design",
+                                        "video Editing",
+                                        "Software Development",
+                                        "E-commerce Solution",
+                                        "Web & Mobile App Development",
+                                        "Wordpress website Development",
+                                        "SEO Services",
+                                        "Social Media Marketing",
+                                        "Social Media Adds",
+                                        "Website PPC",
+                                        "3D Modeling",
+                                        "3D Animation",
+                                        "Other",
+                                    ]}
+                                />
+                            </div>
 
                             <FloatingInput
                                 label="Message"
