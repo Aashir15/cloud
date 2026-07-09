@@ -330,7 +330,7 @@ export default function Header() {
                             </div>
                         ))}
 
-                        <div className="pt-5">
+                        <div className="pt-5" onClick={() => setMobileOpen(false)}>
                             <Button
                                 href="/contact"
                                 text="Contact Us"
