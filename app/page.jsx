@@ -70,7 +70,7 @@ export const metadata = {
     "Software Development Company",
     "AI Solutions",
     "Web Development",
-    "Mobile App Development",
+    "Mobile Apps Development",
     "UI UX Design",
     "Digital Transformation",
     "Custom Software Development",
