@@ -31,7 +31,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-raleway), Arial, Helvetica, sans-serif;
+  /* font-family: var(--font-raleway), Arial, Helvetica, sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   transition:
     background-color 0.3s ease,
@@ -40,7 +42,7 @@ body {
 
 @layer components {
   .heading {
-    @apply text-3xl font-bold leading-tight;
+    @apply text-3xl font-semibold leading-tight;
   }
 
   @media (min-width: 768px) {
