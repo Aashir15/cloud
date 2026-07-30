@@ -6,6 +6,5 @@ export default function robots() {
             disallow: ["/api/", "/_next/"],
         },
         sitemap: "https://cloudmindstechllc.com/sitemap.xml",
-        host: "https://cloudmindstechllc.com",
     };
 }
