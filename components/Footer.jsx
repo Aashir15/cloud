@@ -147,7 +147,7 @@ export default function Footer() {
                             </a>
 
                             <a
-                                href="mailto:info@gmail.com"
+                                href="mailto:hello@cloudmindstechllc.com"
                                 className="flex gap-3 text-sm text-gray-200 hover:text-white transition"
                                 onClick={() => {
                                     if (typeof window !== "undefined" && window.gtag) {
@@ -160,7 +160,7 @@ export default function Footer() {
                                     className="mt-0.5 text-primary"
                                 />
 
-                                <span>support@cloudmindstechllc.com</span>
+                                <span>hello@cloudmindstechllc.com</span>
                             </a>
 
                             <div className="flex gap-3 text-sm text-gray-200">

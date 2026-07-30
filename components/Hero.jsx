@@ -26,14 +26,14 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-linear-to-t from-[#00110F]/80 via-transparent to-[#00110F]/60" />
             </div>
 
-            <Image
+            {/* <Image
                 loading="eager"
                 src="/assets/z.png"
                 alt="hero img"
                 width={1200}
                 height={800}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-170 object-contain pointer-events-none opacity-100 mix-blend-color"
-            />
+            /> */}
 
    
             {/* Content */}
