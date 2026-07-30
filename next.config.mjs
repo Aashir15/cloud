@@ -14,7 +14,7 @@ const nextConfig = {
             },
             {
                 source: "/logo-design",
-                destination: "/creative-design/branding",
+                destination: "/creative-design/graphic-designing",
                 permanent: true,
             },
             {
@@ -29,7 +29,7 @@ const nextConfig = {
             },
             {
                 source: "/digital-branding",
-                destination: "/creative-design/branding",
+                destination: "/growth-marketing/social-media-marketing",
                 permanent: true,
             },
             {
@@ -69,7 +69,7 @@ const nextConfig = {
             },
             {
                 source: "/digital-marketing",
-                destination: "/growth-marketing/seo-services",
+                destination: "/growth-marketing/social-media-marketing",
                 permanent: true,
             },
             {
