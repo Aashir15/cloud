@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
-// import Portfolio from "../components/Portfolio";
 import FAQSection from "../components/Faq";
 import { services } from "../data/creative&design";
 
@@ -14,10 +13,6 @@ const partners = [
     name: "Shopify",
     image: "/assets/CloudMindsTeach-Shopify-Partners.png",
   },
-  // {
-  //   name: "Xiom",
-  //   image: "/assets/CloudMindsTeach-Xiom-Software-Company-Partners.png",
-  // },
   {
     name: "OpenAI",
     image: "/assets/CloudMindsTeach-OpenAiPartners.png",
@@ -118,7 +113,6 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-
       <Hero />
 
       <section className="md:py-20 py-12">
@@ -287,9 +281,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* <Portfolio /> */}
-
     </>
   );
 }

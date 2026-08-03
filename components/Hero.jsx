@@ -14,27 +14,15 @@ export default function Hero() {
                 playsInline
             >
                 <source
-                    src="https://dotclickllc.com/wp-content/uploads/2023/10/Dot-Click-GloballyLeading-Software-Compnay.mp4"
+                    src="/assets/cloud-minds-tech.mp4"
                     type="video/mp4"
                 />
             </video>
-
-            {/* <div className="absolute inset-0 z-1 bg-[#011d19]/40" /> */}
             
             <div className="absolute inset-0 z-1">
                 <div className="absolute inset-0 bg-[#7AFFED]/10" />
                 <div className="absolute inset-0 bg-linear-to-t from-[#00110F]/80 via-transparent to-[#00110F]/60" />
             </div>
-
-            {/* <Image
-                loading="eager"
-                src="/assets/z.png"
-                alt="hero img"
-                width={1200}
-                height={800}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-170 object-contain pointer-events-none opacity-100 mix-blend-color"
-            /> */}
-
    
             {/* Content */}
             <div className="relative z-10 w-full">

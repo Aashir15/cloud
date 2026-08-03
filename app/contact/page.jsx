@@ -53,7 +53,12 @@ export default function Contact() {
             if (data.success) {
 
                 if (typeof window !== "undefined" && window.gtag) {
-                    window.gtag("event", "contact_form_submit");
+                    window.gtag("event", "generate_lead", {
+                        form_name: "contact_form",
+                        service: form.service,
+                        value: 1,
+                        currency: "USD",
+                    });
                 }
 
                 setStatus("success");
